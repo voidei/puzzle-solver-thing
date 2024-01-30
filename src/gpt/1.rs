@@ -1,26 +1,15 @@
+// prompt: how do I write a "lights out" puzzle solver that has a 3x3 grid using rust
+
 const SIZE: usize = 3;
 
 fn main() {
     let mut grid = [[false; SIZE]; SIZE]; // Initialize a 3x3 grid of lights
 
-    // Input the initial grid setup
-    println!("Enter the initial grid (use 0 for off and 1 for on):");
-    for i in 0..SIZE {
-        for j in 0..SIZE {
-            let mut input = String::new();
-            std::io::stdin()
-                .read_line(&mut input)
-                .expect("Failed to read input");
-            let val: bool = match input.trim().parse::<i32>() {
-                Ok(num) => num != 0,
-                Err(_) => {
-                    println!("Invalid input. Please enter 0 or 1.");
-                    continue;
-                }
-            };
-            grid[i][j] = val;
-        }
-    }
+    // Example initial grid setup
+    grid[0][0] = true;
+    grid[0][1] = true;
+    grid[1][0] = true;
+    grid[1][1] = true;
 
     println!("Initial Grid:");
     print_grid(&grid);

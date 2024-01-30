@@ -1,3 +1,5 @@
+// prompt: how do I change that code to allow me to input my own grid
+
 const SIZE: usize = 3;
 
 fn main() {
@@ -11,7 +13,7 @@ fn main() {
             std::io::stdin()
                 .read_line(&mut input)
                 .expect("Failed to read input");
-            let val: bool = match input.trim().parse::<i32>() {
+            let val: bool = match input.trim().parse() {
                 Ok(num) => num != 0,
                 Err(_) => {
                     println!("Invalid input. Please enter 0 or 1.");
